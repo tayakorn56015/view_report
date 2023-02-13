@@ -6,10 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="http://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+
   <title>Document</title>
 </head>
 
@@ -51,6 +54,13 @@
       </tr>
     <?php } ?>
   </table>
+  #Datatable
+  <script>
+    $(document).ready( function () {
+        $('#tablereport').DataTable();
+    } );
+  </script>
+
   <div id="chart_div" style="width: 90%; height: 500px;">
     <script>
       google.charts.load('current', {
@@ -76,13 +86,6 @@
     </script>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <script src="http://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-  <script>
-    $(document).ready( function () {
-        $('#tablereport').DataTable();
-    } );
-  </script>
 </body>
 
 </html>
