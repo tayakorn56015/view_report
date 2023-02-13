@@ -1,0 +1,238 @@
+ERROR - 2023-01-16 23:43:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tota...' at line 3 in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT \tnetwork...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT \tnetwork...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT \tnetwork...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT \tnetwork...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-16 23:43:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tota...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 4 APPPATH\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-16 23:44:01 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tot...' at line 3 in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT \tnetwork...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT \tnetwork...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT \tnetwork...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT \tnetwork...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-16 23:44:01 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tot...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 4 APPPATH\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-16 23:44:24 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tot...' at line 3 in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT \tnetwork...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT \tnetwork...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT \tnetwork...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT \tnetwork...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-16 23:44:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tot...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 4 APPPATH\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-16 23:44:25 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tot...' at line 3 in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT \tnetwork...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT \tnetwork...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT \tnetwork...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT \tnetwork...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-16 23:44:25 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)tot...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 4 APPPATH\Models\overall.php(15): CodeIgniter\Database\BaseConnection->query('SELECT 	network,
+			count(id) row_bot,
+            sum(follower >= 2500) follower>=2500,
+			count(distinct influencer_id) influencer, 
+			sum(post_total)total_post 
+            FROM influencer_stat_post_recent 
+            GROUP BY network')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-16 23:44:54 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_overall.php', 49)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_overall.php', 49)
+ 3 APPPATH\Views\view_overall.php(49): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_overall.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_overall', [], true)
+ 7 APPPATH\Controllers\Home.php(47): view('view_overall', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-16 23:52:09 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_overall.php', 49)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_overall.php', 49)
+ 3 APPPATH\Views\view_overall.php(49): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_overall.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_overall', [], true)
+ 7 APPPATH\Controllers\Home.php(47): view('view_overall', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

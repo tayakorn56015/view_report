@@ -1,0 +1,7 @@
+CRITICAL - 2023-01-20 03:12:37 --> Undefined array key "charts"
+in APPPATH\Controllers\Home.php on line 28.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "charts"', 'APPPATH\\Controllers\\Home.php', 28)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

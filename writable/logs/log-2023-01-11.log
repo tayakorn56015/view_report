@@ -1,0 +1,22 @@
+CRITICAL - 2023-01-11 01:41:15 --> Undefined variable $network
+in APPPATH\Views\view_dayly.php on line 94.
+ 1 APPPATH\Views\view_dayly.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $network', 'APPPATH\\Views\\view_dayly.php', 94)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_dayly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_dayly', [], true)
+ 5 APPPATH\Controllers\Home.php(65): view('view_dayly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-11 01:41:54 --> Undefined array key "day"
+in APPPATH\Views\view_dayly.php on line 113.
+ 1 APPPATH\Views\view_dayly.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "day"', 'APPPATH\\Views\\view_dayly.php', 113)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_dayly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_dayly', [], true)
+ 5 APPPATH\Controllers\Home.php(65): view('view_dayly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

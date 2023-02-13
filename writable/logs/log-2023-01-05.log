@@ -1,0 +1,11 @@
+CRITICAL - 2023-01-05 21:20:42 --> Undefined variable $year
+in APPPATH\Views\view_monthly.php on line 197.
+ 1 APPPATH\Views\view_monthly.php(197): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $year', 'APPPATH\\Views\\view_monthly.php', 197)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 5 APPPATH\Controllers\Home.php(74): view('view_monthly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

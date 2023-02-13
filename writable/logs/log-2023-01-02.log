@@ -1,0 +1,985 @@
+ERROR - 2023-01-02 20:07:52 --> Error connecting to the database: mysqli_sql_exception: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('122.155.166.63', 'intern', 'TVIw3yZchDLH', 'influencer', 3306, '', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp1\htdocs\report\app\Models\weekly.php(20): CodeIgniter\Database\BaseConnection->query('SELECT  count(d...')
+#4 C:\xampp1\htdocs\report\app\Controllers\Home.php(12): App\Models\weekly->week()
+#5 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->index()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp1\htdocs\report\app\Models\weekly.php(20): CodeIgniter\Database\BaseConnection->query('SELECT  count(d...')
+#3 C:\xampp1\htdocs\report\app\Controllers\Home.php(12): App\Models\weekly->week()
+#4 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->index()
+#5 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-02 20:07:52 --> Unable to connect to the database.
+Main connection [MySQLi]: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\weekly.php(20): CodeIgniter\Database\BaseConnection->query('SELECT  count(distinct influencer_id),
+        network,    
+        sum(post_total)as post_total,
+        date(create_date)as date,
+        WEEK(create_date)AS week,
+        dayname(create_date)as day,
+        min(time(create_date)),
+        max(time(create_date))
+        FROM influencer_stat_post_recent 
+        WHERE WEEK(create_date) = \'3\'
+        GROUP BY DATE,network,week')
+ 3 APPPATH\Controllers\Home.php(12): App\Models\weekly->week()
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:09:31 --> Attempt to read property "post_total" on array
+in APPPATH\Libraries\total.php on line 17.
+ 1 APPPATH\Libraries\total.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "post_total" on array', 'APPPATH\\Libraries\\total.php', 17)
+ 2 APPPATH\Controllers\Home.php(15): App\Libraries\total->total_post()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:09:31 --> Attempt to read property "post_total" on array
+in APPPATH\Libraries\total.php on line 17.
+ 1 APPPATH\Libraries\total.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "post_total" on array', 'APPPATH\\Libraries\\total.php', 17)
+ 2 APPPATH\Controllers\Home.php(15): App\Libraries\total->total_post()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:12:47 --> Attempt to read property "post_total" on array
+in APPPATH\Libraries\total.php on line 17.
+ 1 APPPATH\Libraries\total.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "post_total" on array', 'APPPATH\\Libraries\\total.php', 17)
+ 2 APPPATH\Controllers\Home.php(15): App\Libraries\total->total_post()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:26:53 --> Attempt to read property "post_total" on array
+in APPPATH\Libraries\total.php on line 17.
+ 1 APPPATH\Libraries\total.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "post_total" on array', 'APPPATH\\Libraries\\total.php', 17)
+ 2 APPPATH\Controllers\Home.php(15): App\Libraries\total->total_post()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:27:24 --> Undefined variable $result
+in APPPATH\Libraries\total.php on line 23.
+ 1 APPPATH\Libraries\total.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $result', 'APPPATH\\Libraries\\total.php', 23)
+ 2 APPPATH\Controllers\Home.php(15): App\Libraries\total->total_post()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:27:39 --> Attempt to read property "post_total" on array
+in APPPATH\Libraries\total.php on line 17.
+ 1 APPPATH\Libraries\total.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "post_total" on array', 'APPPATH\\Libraries\\total.php', 17)
+ 2 APPPATH\Controllers\Home.php(15): App\Libraries\total->total_post()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-02 20:31:08 --> mysqli_sql_exception: Unknown column 'dreate_date' in 'where clause' in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT  count(d...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT  count(d...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT  count(d...')
+#3 C:\xampp1\htdocs\report\app\Models\weekly.php(20): CodeIgniter\Database\BaseConnection->query('SELECT  count(d...')
+#4 C:\xampp1\htdocs\report\app\Controllers\Home.php(12): App\Models\weekly->week()
+#5 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->index()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-02 20:31:08 --> Unknown column 'dreate_date' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT  count(distinct influencer_id),
+        network,    
+        sum(post_total)as post_total,
+        date(create_date)as date,
+        WEEK(create_date)AS week,
+        dayname(create_date)as day,
+        min(time(create_date)),
+        max(time(create_date))
+        FROM influencer_stat_post_recent 
+        WHERE WEEK(create_date) = \'3\' and year(dreate_date) = \'2022\'
+        GROUP BY DATE,network,week', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT  count(distinct influencer_id),
+        network,    
+        sum(post_total)as post_total,
+        date(create_date)as date,
+        WEEK(create_date)AS week,
+        dayname(create_date)as day,
+        min(time(create_date)),
+        max(time(create_date))
+        FROM influencer_stat_post_recent 
+        WHERE WEEK(create_date) = \'3\' and year(dreate_date) = \'2022\'
+        GROUP BY DATE,network,week')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT  count(distinct influencer_id),
+        network,    
+        sum(post_total)as post_total,
+        date(create_date)as date,
+        WEEK(create_date)AS week,
+        dayname(create_date)as day,
+        min(time(create_date)),
+        max(time(create_date))
+        FROM influencer_stat_post_recent 
+        WHERE WEEK(create_date) = \'3\' and year(dreate_date) = \'2022\'
+        GROUP BY DATE,network,week')
+ 4 APPPATH\Models\weekly.php(20): CodeIgniter\Database\BaseConnection->query('SELECT  count(distinct influencer_id),
+        network,    
+        sum(post_total)as post_total,
+        date(create_date)as date,
+        WEEK(create_date)AS week,
+        dayname(create_date)as day,
+        min(time(create_date)),
+        max(time(create_date))
+        FROM influencer_stat_post_recent 
+        WHERE WEEK(create_date) = \'3\' and year(dreate_date) = \'2022\'
+        GROUP BY DATE,network,week')
+ 5 APPPATH\Controllers\Home.php(12): App\Models\weekly->week()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:35:34 --> Class "App\Libraries\total" not found
+in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:36:14 --> Class "App\Controllers\ReportWeek" not found
+in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:36:30 --> Call to undefined method App\Libraries\ReportWeek::total_post()
+in APPPATH\Controllers\Home.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:37:49 --> Call to undefined method App\Libraries\ReportWeek::total_post()
+in APPPATH\Controllers\Home.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:41:25 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 845.
+ 1 SYSTEMPATH\Model.php(587): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Home.php(12): CodeIgniter\Model->__call('week', [])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:42:01 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 845.
+ 1 SYSTEMPATH\Model.php(587): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Home.php(12): CodeIgniter\Model->__call('week', [])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:42:06 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 845.
+ 1 SYSTEMPATH\Model.php(587): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Home.php(12): CodeIgniter\Model->__call('week', [])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:49:36 --> Class "App\Controllers\Reportmonthly" not found
+in APPPATH\Controllers\Home.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:50:26 --> Undefined variable $weekly
+in APPPATH\Controllers\Home.php on line 20.
+ 1 APPPATH\Controllers\Home.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $weekly', 'APPPATH\\Controllers\\Home.php', 20)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:51:25 --> Undefined variable $weekly
+in APPPATH\Controllers\Home.php on line 20.
+ 1 APPPATH\Controllers\Home.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $weekly', 'APPPATH\\Controllers\\Home.php', 20)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:53:26 --> Undefined array key "total"
+in APPPATH\Libraries\ReportMonthly.php on line 23.
+ 1 APPPATH\Libraries\ReportMonthly.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'APPPATH\\Libraries\\ReportMonthly.php', 23)
+ 2 APPPATH\Controllers\Home.php(17): App\Libraries\Reportmonthly->total_post_monthly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:53:59 --> Undefined variable $monthly
+in APPPATH\Controllers\Home.php on line 21.
+ 1 APPPATH\Controllers\Home.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $monthly', 'APPPATH\\Controllers\\Home.php', 21)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:54:39 --> Undefined array key "totalmonthly"
+in APPPATH\Controllers\Home.php on line 21.
+ 1 APPPATH\Controllers\Home.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "totalmonthly"', 'APPPATH\\Controllers\\Home.php', 21)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 20:55:00 --> Cannot use [] for reading
+in APPPATH\Controllers\Home.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 21:42:19 --> syntax error, unexpected token ")"
+in APPPATH\Models\weekly.php on line 19.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Models\\weekly.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\weekly')
+ 3 APPPATH\Libraries\ReportWeekly.php(10): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\weekly')
+ 4 APPPATH\Controllers\Home.php(14): App\Libraries\ReportWeekly->total_post_weekly()
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 21:48:35 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Libraries\ReportWeekly.php on line 12 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): App\Models\weekly->weekly()
+ 2 APPPATH\Controllers\Home.php(15): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 21:52:39 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 21:52:48 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 21:53:51 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 21:54:15 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 21:54:23 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:44:21 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Libraries\ReportWeekly.php on line 12 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): App\Models\weekly->weekly()
+ 2 APPPATH\Controllers\Home.php(19): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:46:01 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Libraries\ReportWeekly.php on line 12 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): App\Models\weekly->weekly()
+ 2 APPPATH\Controllers\Home.php(19): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:47:41 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Libraries\ReportWeekly.php on line 12 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): App\Models\weekly->weekly()
+ 2 APPPATH\Controllers\Home.php(19): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:48:37 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Libraries\ReportWeekly.php on line 12 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): App\Models\weekly->weekly()
+ 2 APPPATH\Controllers\Home.php(19): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:49:02 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 28.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:49:05 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 28.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:49:37 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 28.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:49:38 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 28.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:49:39 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 28.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:49:41 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 28.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:51:00 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:51:23 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:51:25 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:54:48 --> Array to string conversion
+in APPPATH\Views\welcome_message.php on line 84.
+ 1 APPPATH\Views\welcome_message.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\welcome_message.php', 84)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\welcome_message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
+ 5 APPPATH\Controllers\Home.php(30): view('welcome_message', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:56:00 --> Undefined array key ""
+in APPPATH\Views\welcome_message.php on line 84.
+ 1 APPPATH\Views\welcome_message.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'APPPATH\\Views\\welcome_message.php', 84)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\welcome_message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
+ 5 APPPATH\Controllers\Home.php(30): view('welcome_message', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:56:35 --> Undefined variable $result
+in APPPATH\Views\welcome_message.php on line 84.
+ 1 APPPATH\Views\welcome_message.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $result', 'APPPATH\\Views\\welcome_message.php', 84)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\welcome_message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
+ 5 APPPATH\Controllers\Home.php(30): view('welcome_message', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:56:57 --> Array to string conversion
+in APPPATH\Views\welcome_message.php on line 84.
+ 1 APPPATH\Views\welcome_message.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\welcome_message.php', 84)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\welcome_message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
+ 5 APPPATH\Controllers\Home.php(30): view('welcome_message', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:57:58 --> Array callback must have exactly two elements
+in APPPATH\Views\welcome_message.php on line 84.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
+ 4 APPPATH\Controllers\Home.php(30): view('welcome_message', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:58:49 --> Array to string conversion
+in APPPATH\Views\welcome_message.php on line 85.
+ 1 APPPATH\Views\welcome_message.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\welcome_message.php', 85)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\welcome_message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
+ 5 APPPATH\Controllers\Home.php(30): view('welcome_message', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 22:59:12 --> Undefined array key ""
+in APPPATH\Views\welcome_message.php on line 85.
+ 1 APPPATH\Views\welcome_message.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'APPPATH\\Views\\welcome_message.php', 85)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\welcome_message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
+ 5 APPPATH\Controllers\Home.php(30): view('welcome_message', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:01:03 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Libraries\ReportWeekly.php on line 12 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): App\Models\weekly->weekly()
+ 2 APPPATH\Controllers\Home.php(19): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:02:19 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:04:13 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:04:15 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 29.
+ 1 APPPATH\Controllers\Home.php(16): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:04:48 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:14 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:16 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:16 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:18 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:18 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:18 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:18 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:19 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:19 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:19 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:19 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:20 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:20 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:20 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:20 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:05:20 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:06:00 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:08:43 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:11:30 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:14:33 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:14:35 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:14:47 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:14:47 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:14:47 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:14:47 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:14:48 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 15
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(15): CodeIgniter\Model->__construct('1', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:20:15 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 19 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly()
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:20:51 --> Too few arguments to function App\Models\weekly::weekly(), 0 passed in C:\xampp1\htdocs\report\app\Libraries\ReportWeekly.php on line 12 and exactly 2 expected
+in APPPATH\Models\weekly.php on line 15.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): App\Models\weekly->weekly()
+ 2 APPPATH\Controllers\Home.php(22): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:21:31 --> Undefined variable $weekly
+in APPPATH\Libraries\ReportWeekly.php on line 12.
+ 1 APPPATH\Libraries\ReportWeekly.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $weekly', 'APPPATH\\Libraries\\ReportWeekly.php', 12)
+ 2 APPPATH\Controllers\Home.php(22): App\Libraries\ReportWeekly->total_post_weekly()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:21:47 --> Too few arguments to function App\Libraries\ReportWeekly::total_post_weekly(), 0 passed in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 22 and exactly 2 expected
+in APPPATH\Libraries\ReportWeekly.php on line 8.
+ 1 APPPATH\Controllers\Home.php(22): App\Libraries\ReportWeekly->total_post_weekly()
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:22:37 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:04 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:07 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:09 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:16 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:18 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:19 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:26 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:23:27 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 30.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:03 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:04 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:04 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:04 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:04 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:05 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:05 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:05 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:05 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:05 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:24:06 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:14 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:26 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:27 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:27 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:27 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:28 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:28 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:28 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:28 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:28 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:29 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:38 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:40 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:41 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:29:42 --> Object of class App\Models\weekly could not be converted to string
+in APPPATH\Models\weekly.php on line 31.
+ 1 APPPATH\Controllers\Home.php(19): App\Models\weekly->weekly(Object(App\Models\weekly), '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:30:09 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 18
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct('2', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-02 23:30:10 --> CodeIgniter\Model::__construct(): Argument #1 ($db) must be of type ?CodeIgniter\Database\ConnectionInterface, string given, called in C:\xampp1\htdocs\report\app\Controllers\Home.php on line 18
+in SYSTEMPATH\Model.php on line 132.
+ 1 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct('2', '2022')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

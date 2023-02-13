@@ -1,0 +1,334 @@
+ERROR - 2023-01-10 01:46:16 --> mysqli_sql_exception: Unknown column 'WEEK' in 'group statement' in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT  count(d...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT  count(d...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT  count(d...')
+#3 C:\xampp1\htdocs\report\app\Models\monthlyy.php(31): CodeIgniter\Database\BaseConnection->query('SELECT  count(d...')
+#4 C:\xampp1\htdocs\report\app\Controllers\Home.php(58): App\Models\monthlyy->monthly('September', '2022', 'facebook')
+#5 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 01:46:16 --> Unknown column 'WEEK' in 'group statement'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT  count(distinct influencer_id),
+            network,    
+            sum(post_total)as sum_post,
+            count(distinct influencer_id) AS sum_influencer,
+            year(create_date) as year,
+            day(create_date) DAY,
+            MONTHNAME(create_date)AS  name_month,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) DATE,
+            dayname(create_date) nameday
+            FROM influencer_stat_post_recent 
+            WHERE MONTHNAME(create_date) = \'September\' and year(create_date) = \'2022\' AND network = \'facebook\'
+            GROUP BY WEEK', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT  count(distinct influencer_id),
+            network,    
+            sum(post_total)as sum_post,
+            count(distinct influencer_id) AS sum_influencer,
+            year(create_date) as year,
+            day(create_date) DAY,
+            MONTHNAME(create_date)AS  name_month,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) DATE,
+            dayname(create_date) nameday
+            FROM influencer_stat_post_recent 
+            WHERE MONTHNAME(create_date) = \'September\' and year(create_date) = \'2022\' AND network = \'facebook\'
+            GROUP BY WEEK')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT  count(distinct influencer_id),
+            network,    
+            sum(post_total)as sum_post,
+            count(distinct influencer_id) AS sum_influencer,
+            year(create_date) as year,
+            day(create_date) DAY,
+            MONTHNAME(create_date)AS  name_month,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) DATE,
+            dayname(create_date) nameday
+            FROM influencer_stat_post_recent 
+            WHERE MONTHNAME(create_date) = \'September\' and year(create_date) = \'2022\' AND network = \'facebook\'
+            GROUP BY WEEK')
+ 4 APPPATH\Models\monthlyy.php(31): CodeIgniter\Database\BaseConnection->query('SELECT  count(distinct influencer_id),
+            network,    
+            sum(post_total)as sum_post,
+            count(distinct influencer_id) AS sum_influencer,
+            year(create_date) as year,
+            day(create_date) DAY,
+            MONTHNAME(create_date)AS  name_month,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) DATE,
+            dayname(create_date) nameday
+            FROM influencer_stat_post_recent 
+            WHERE MONTHNAME(create_date) = \'September\' and year(create_date) = \'2022\' AND network = \'facebook\'
+            GROUP BY WEEK')
+ 5 APPPATH\Controllers\Home.php(58): App\Models\monthlyy->monthly('September', '2022', 'facebook')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 01:47:18 --> Undefined property: stdClass::$total_post
+in APPPATH\Models\monthlyy.php on line 84.
+ 1 APPPATH\Models\monthlyy.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$total_post', 'APPPATH\\Models\\monthlyy.php', 84)
+ 2 APPPATH\Controllers\Home.php(58): App\Models\monthlyy->monthly('September', '2022', 'facebook')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 01:47:36 --> Undefined property: stdClass::$day
+in APPPATH\Models\monthlyy.php on line 86.
+ 1 APPPATH\Models\monthlyy.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$day', 'APPPATH\\Models\\monthlyy.php', 86)
+ 2 APPPATH\Controllers\Home.php(58): App\Models\monthlyy->monthly('September', '2022', 'facebook')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 01:47:50 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 114)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 114)
+ 3 APPPATH\Views\view_monthly.php(114): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(74): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 01:51:32 --> Undefined variable $weekly
+in APPPATH\Views\view_monthly.php on line 95.
+ 1 APPPATH\Views\view_monthly.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $weekly', 'APPPATH\\Views\\view_monthly.php', 95)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 5 APPPATH\Controllers\Home.php(74): view('view_monthly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 02:16:38 --> Undefined variable $weekly
+in APPPATH\Views\view_monthly.php on line 270.
+ 1 APPPATH\Views\view_monthly.php(270): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $weekly', 'APPPATH\\Views\\view_monthly.php', 270)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 5 APPPATH\Controllers\Home.php(74): view('view_monthly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 02:22:08 --> mysqli_sql_exception: Unknown column 'January' in 'where clause' in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT \tnetwork...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT \tnetwork...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT \tnetwork...')
+#3 C:\xampp1\htdocs\report\app\Models\monthlyy.php(93): CodeIgniter\Database\BaseConnection->query('SELECT \tnetwork...')
+#4 C:\xampp1\htdocs\report\app\Controllers\Home.php(58): App\Models\monthlyy->monthly('January', '', '')
+#5 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 02:22:08 --> Unknown column 'January' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 	network,
+            month(create_date)AS month,
+            year(create_date)AS YEAR,
+            DATE_FORMAT(create_date,\'%Y-%m\') year_month_,
+            MONTHNAME(create_date)AS  name_month,
+            COUNT(DISTINCT influencer_id) influencer, 
+            sum(post_total)total_post,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) day
+            FROM influencer_stat_post_recent 
+            WHERE  MONTHNAME(create_date) = January
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 	network,
+            month(create_date)AS month,
+            year(create_date)AS YEAR,
+            DATE_FORMAT(create_date,\'%Y-%m\') year_month_,
+            MONTHNAME(create_date)AS  name_month,
+            COUNT(DISTINCT influencer_id) influencer, 
+            sum(post_total)total_post,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) day
+            FROM influencer_stat_post_recent 
+            WHERE  MONTHNAME(create_date) = January
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 	network,
+            month(create_date)AS month,
+            year(create_date)AS YEAR,
+            DATE_FORMAT(create_date,\'%Y-%m\') year_month_,
+            MONTHNAME(create_date)AS  name_month,
+            COUNT(DISTINCT influencer_id) influencer, 
+            sum(post_total)total_post,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) day
+            FROM influencer_stat_post_recent 
+            WHERE  MONTHNAME(create_date) = January
+            GROUP BY network')
+ 4 APPPATH\Models\monthlyy.php(93): CodeIgniter\Database\BaseConnection->query('SELECT 	network,
+            month(create_date)AS month,
+            year(create_date)AS YEAR,
+            DATE_FORMAT(create_date,\'%Y-%m\') year_month_,
+            MONTHNAME(create_date)AS  name_month,
+            COUNT(DISTINCT influencer_id) influencer, 
+            sum(post_total)total_post,
+            min(date(create_date))AS min,
+            max(date(create_date))AS max,
+            DATE(create_date) day
+            FROM influencer_stat_post_recent 
+            WHERE  MONTHNAME(create_date) = January
+            GROUP BY network')
+ 5 APPPATH\Controllers\Home.php(58): App\Models\monthlyy->monthly('January', 'ROOTPATH\\public', 'ROOTPATH\\public')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 20:08:37 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-01-10 20:08:37 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-01-10 20:08:37 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-01-10 21:48:44 --> Undefined variable $totaloverall
+in APPPATH\Views\view_overall.php on line 41.
+ 1 APPPATH\Views\view_overall.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totaloverall', 'APPPATH\\Views\\view_overall.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_overall.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_overall', [], true)
+ 5 APPPATH\Controllers\Home.php(51): view('view_overall')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 21:49:24 --> Undefined variable $totaloverall
+in APPPATH\Views\view_overall.php on line 41.
+ 1 APPPATH\Views\view_overall.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totaloverall', 'APPPATH\\Views\\view_overall.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_overall.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_overall', [], true)
+ 5 APPPATH\Controllers\Home.php(51): view('view_overall')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 22:22:11 --> Undefined array key "dayly"
+in APPPATH\Controllers\Home.php on line 63.
+ 1 APPPATH\Controllers\Home.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dayly"', 'APPPATH\\Controllers\\Home.php', 63)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 23:03:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROU...' at line 7 in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,...')
+#3 C:\xampp1\htdocs\report\app\Models\dayly.php(37): CodeIgniter\Database\BaseConnection->query('SELECT network,...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportDayly.php(11): App\Models\dayly->dayly(NULL, NULL, NULL)
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(58): App\Libraries\ReportDayly->total_post_dayly(NULL, NULL, NULL)
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->dayly()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-10 23:03:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROU...' at line 7
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network')
+ 4 APPPATH\Models\dayly.php(37): CodeIgniter\Database\BaseConnection->query('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network')
+ 5 APPPATH\Libraries\ReportDayly.php(11): App\Models\dayly->dayly(null, null, null)
+ 6 APPPATH\Controllers\Home.php(58): App\Libraries\ReportDayly->total_post_dayly(null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 23:09:45 --> Undefined array key "network"
+in APPPATH\Views\view_dayly.php on line 78.
+ 1 APPPATH\Views\view_dayly.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "network"', 'APPPATH\\Views\\view_dayly.php', 78)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_dayly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_dayly', [], true)
+ 5 APPPATH\Controllers\Home.php(65): view('view_dayly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 23:12:08 --> Undefined array key "totaldayly"
+in APPPATH\Views\view_dayly.php on line 78.
+ 1 APPPATH\Views\view_dayly.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "totaldayly"', 'APPPATH\\Views\\view_dayly.php', 78)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_dayly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_dayly', [], true)
+ 5 APPPATH\Controllers\Home.php(65): view('view_dayly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 23:13:45 --> Undefined array key "dayly"
+in APPPATH\Views\view_dayly.php on line 78.
+ 1 APPPATH\Views\view_dayly.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dayly"', 'APPPATH\\Views\\view_dayly.php', 78)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_dayly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_dayly', [], true)
+ 5 APPPATH\Controllers\Home.php(65): view('view_dayly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 23:16:00 --> Undefined array key "sum"
+in APPPATH\Views\view_dayly.php on line 109.
+ 1 APPPATH\Views\view_dayly.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sum"', 'APPPATH\\Views\\view_dayly.php', 109)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_dayly.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_dayly', [], true)
+ 5 APPPATH\Controllers\Home.php(65): view('view_dayly', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

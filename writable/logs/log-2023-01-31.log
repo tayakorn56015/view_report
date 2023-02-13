@@ -1,0 +1,311 @@
+ERROR - 2023-01-31 20:49:46 --> mysqli_sql_exception: Table 'influencer.overall' doesn't exist in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-31 20:49:46 --> Table 'influencer.overall' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 4 APPPATH\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 22:19:24 --> mysqli_sql_exception: Table 'influencer.overall' doesn't exist in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-31 22:19:24 --> Table 'influencer.overall' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 4 APPPATH\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 22:22:42 --> mysqli_sql_exception: Table 'influencer.overall' doesn't exist in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-31 22:22:42 --> Table 'influencer.overall' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 4 APPPATH\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM overall ')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 22:23:29 --> mysqli_sql_exception: Unknown column 'account_influencer' in 'field list' in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-31 22:23:29 --> Unknown column 'account_influencer' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM over_all ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM over_all ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM over_all ')
+ 4 APPPATH\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,
+        account_influencer ,
+        follower,raw_bot,total_post, total_post_unique,duplicate
+                    FROM over_all ')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 22:24:44 --> mysqli_sql_exception: Unknown column 'total_post_unique' in 'field list' in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT  week,\r\n...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT  week,\r\n...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT  week,\r\n...')
+#3 C:\xampp1\htdocs\report\app\Models\weekly.php(111): CodeIgniter\Database\BaseConnection->query('SELECT  week,\r\n...')
+#4 C:\xampp1\htdocs\report\app\Controllers\Home.php(23): App\Models\weekly->weekly(NULL, NULL, NULL)
+#5 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->weekly()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-31 22:24:44 --> Unknown column 'total_post_unique' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT  week,
+            year,    
+            network,
+            account_influencer,
+            total_post,
+            total_post_unique,
+            duplicate
+            FROM weekly 
+            where week = week(NOW()) and year = year(NOW())
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT  week,
+            year,    
+            network,
+            account_influencer,
+            total_post,
+            total_post_unique,
+            duplicate
+            FROM weekly 
+            where week = week(NOW()) and year = year(NOW())
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT  week,
+            year,    
+            network,
+            account_influencer,
+            total_post,
+            total_post_unique,
+            duplicate
+            FROM weekly 
+            where week = week(NOW()) and year = year(NOW())
+            GROUP BY network')
+ 4 APPPATH\Models\weekly.php(111): CodeIgniter\Database\BaseConnection->query('SELECT  week,
+            year,    
+            network,
+            account_influencer,
+            total_post,
+            total_post_unique,
+            duplicate
+            FROM weekly 
+            where week = week(NOW()) and year = year(NOW())
+            GROUP BY network')
+ 5 APPPATH\Controllers\Home.php(23): App\Models\weekly->weekly(null, null, null)
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->weekly()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:30:14 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:30:27 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:31:57 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:33:21 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:38:08 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:39:22 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:40:31 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 22:40:57 --> Undefined constant "CodeIgniter\Debug\VENDORPATH"
+in SYSTEMPATH\Debug\Exceptions.php on line 177.
+ 1 SYSTEMPATH\Debug\Exceptions.php(157): CodeIgniter\Debug\Exceptions->isFakerDeprecationError(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 2 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'number_format(): Passing null to parameter #1 ($num) of type float is deprecated', 'APPPATH\\Views\\view_monthly.php', 113)
+ 3 APPPATH\Views\view_monthly.php(113): number_format(null)
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\view_monthly.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('view_monthly', [], true)
+ 7 APPPATH\Controllers\Home.php(94): view('view_monthly', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->monthly_table()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

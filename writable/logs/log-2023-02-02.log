@@ -1,0 +1,94 @@
+ERROR - 2023-02-02 04:09:54 --> mysqli_sql_exception: Unknown column 'total_post_unique' in 'field list' in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,...')
+#3 C:\xampp1\htdocs\report\app\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->overall()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-02-02 04:09:54 --> Unknown column 'total_post_unique' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,
+        account ,
+        follower,total_post, total_post_unique,duplicate
+                    FROM over_all ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,
+        account ,
+        follower,total_post, total_post_unique,duplicate
+                    FROM over_all ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,
+        account ,
+        follower,total_post, total_post_unique,duplicate
+                    FROM over_all ')
+ 4 APPPATH\Models\overall.php(23): CodeIgniter\Database\BaseConnection->query('SELECT network,
+        account ,
+        follower,total_post, total_post_unique,duplicate
+                    FROM over_all ')
+ 5 APPPATH\Libraries\ReportOverAll.php(11): App\Models\overall->overall()
+ 6 APPPATH\Controllers\Home.php(40): App\Libraries\ReportOverAll->total_post_overall()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->overall()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 07:16:51 --> mysqli_sql_exception: Table 'influencer.influencer_stat_post_recent' doesn't exist in C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp1\htdocs\report\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,...', 0)
+#1 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,...')
+#2 C:\xampp1\htdocs\report\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,...')
+#3 C:\xampp1\htdocs\report\app\Models\dayly.php(50): CodeIgniter\Database\BaseConnection->query('SELECT network,...')
+#4 C:\xampp1\htdocs\report\app\Libraries\ReportDayly.php(11): App\Models\dayly->dayly(NULL, NULL, NULL)
+#5 C:\xampp1\htdocs\report\app\Controllers\Home.php(58): App\Libraries\ReportDayly->total_post_dayly(NULL, NULL, NULL)
+#6 C:\xampp1\htdocs\report\system\CodeIgniter.php(927): App\Controllers\Home->dayly()
+#7 C:\xampp1\htdocs\report\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp1\htdocs\report\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp1\htdocs\report\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-02-02 07:16:51 --> Table 'influencer.influencer_stat_post_recent' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+            year(create_date)AS year,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            WHERE week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+            year(create_date)AS year,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            WHERE week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+            year(create_date)AS year,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            WHERE week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network')
+ 4 APPPATH\Models\dayly.php(50): CodeIgniter\Database\BaseConnection->query('SELECT network,sum(post_total)total_post,
+			count(distinct influencer_id) influencer,
+			date(create_date)as DATE,
+			WEEK(create_date)AS week,
+            year(create_date)AS year,
+			MONTHNAME(create_date)AS name_month
+            FROM influencer_stat_post_recent
+            WHERE week(create_date)=week(NOW()) AND year(create_date)=year(NOW())
+            GROUP BY network')
+ 5 APPPATH\Libraries\ReportDayly.php(11): App\Models\dayly->dayly(null, null, null)
+ 6 APPPATH\Controllers\Home.php(58): App\Libraries\ReportDayly->total_post_dayly(null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->dayly()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
